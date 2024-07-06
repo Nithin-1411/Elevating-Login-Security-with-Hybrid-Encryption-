@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpseclib/phpseclib": "^3.0",
+        "phpmailer/phpmailer": "^6.9",
+        "wildbit/postmark-php": "^6.0"
+    }
+}

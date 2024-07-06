@@ -1,0 +1,10 @@
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+    font-family: monospace;
+    background-color: #f0f0f0;
+    max-width: 80%; /* Limit width for better readability */
+    margin: 20px auto; /* Center the pre element */
+    padding: 15px;
+}

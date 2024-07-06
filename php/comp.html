@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encryption Benchmark</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="benchmarkChart" width="400" height="200"></canvas>
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('benchmarkChart').getContext('2d');
+                const benchmarkChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.algorithms,
+                        datasets: [
+                            {
+                                label: 'Time (ms)',
+                                data: data.times.map(time => time * 1000), // Convert to ms
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1,
+                                yAxisID: 'y-axis-time',
+                            },
+                            {
+                                label: 'Memory (bytes)',
+                                data: data.memories,
+                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                yAxisID: 'y-axis-memory',
+                            },
+                        ],
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [
+                                {
+                                    id: 'y-axis-time',
+                                    type: 'linear',
+                                    position: 'left',
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Time (ms)',
+                                    },
+                                    ticks: {
+                                        beginAtZero: true,
+                                    },
+                                },
+                                {
+                                    id: 'y-axis-memory',
+                                    type: 'linear',
+                                    position: 'right',
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Memory (bytes)',
+                                    },
+                                    ticks: {
+                                        beginAtZero: true,
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                });
+            });
+    </script>
+</body>
+</html>

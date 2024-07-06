@@ -1,0 +1,1 @@
+{"algorithms":["RSA+DES","RSA+AES","RSA+TripleDES","RSA+Blowfish"],"times":{"RSA+DES":0.007250308990478516,"RSA+AES":0.003695964813232422,"RSA+TripleDES":0.004704952239990234,"RSA+Blowfish":0.005262851715087891},"memories":{"RSA+DES":173464,"RSA+AES":544,"RSA+TripleDES":520,"RSA+Blowfish":66856},"securities":{"RSA+DES":2,"RSA+AES":10,"RSA+TripleDES":6,"RSA+Blowfish":7}}
